@@ -19,7 +19,7 @@ The Boilerplate to start React+Redux project with TypeScript in an easier and fa
 
 2. Clone this repository to your computer: 
     ```sh
-    git clone https://github.com/vannizhang/react-redux-boilerplate.git
+    git clone https://github.com/maharjunm/shore-web-app.git
     ```
 
 
