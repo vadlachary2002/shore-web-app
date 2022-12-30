@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './NavBar.css';
+import './NavBar.scss';
 import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
   console.log(window.location.pathname);
