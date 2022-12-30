@@ -12,11 +12,13 @@ interface State {
 export default class ErrorBoundary extends PureComponent<Props, State> {
     constructor(props: Props) {
         super(props);
+
         this.state = {
             error: null,
             errorInfo: null,
         };
     }
+
     componentDidCatch(
         error: Error,
         errorInfo: { componentStack: string }
@@ -26,6 +28,7 @@ export default class ErrorBoundary extends PureComponent<Props, State> {
 
         // You can also log error messages to an error reporting service here
     }
+
     render() {
         const { children } = this.props;
         const { error, errorInfo } = this.state;
