@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './NavBar.scss';
 import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
-  console.log(window.location.pathname);
     return (
         <>
             <nav className="navbar">
@@ -14,7 +13,7 @@ const NavBar = () => {
                     </div>
                     <div>
                       <ul>
-                          <li ><NavLink to="/home">Home</NavLink></li>
+                          <li ><NavLink exact to="/" >Home</NavLink></li>
                           <li > <NavLink to="/jobs">Jobs</NavLink></li>
                           <li ><NavLink to="/postjobs">Post a Job</NavLink></li>
                           <li > <NavLink to="/aboutus">About Us</NavLink></li>
