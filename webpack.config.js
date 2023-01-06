@@ -34,7 +34,7 @@ module.exports =  (env, options)=> {
                     loader: 'babel-loader'
                 },
                 {
-                    test: /\.css$/i,
+                    test: /\.(css|scss)$/i,
                     include: path.resolve(__dirname, 'src'),
                     use: [
                         MiniCssExtractPlugin.loader,
