@@ -1,0 +1,17 @@
+.products{
+  width:100%;
+}
+.content{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px solid rgba(255, 255, 255, 0.048);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.0);
+  border: 0px solid #000;
+  border-radius: 5px;
+}
+

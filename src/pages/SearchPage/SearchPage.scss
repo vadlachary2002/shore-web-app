@@ -1,0 +1,93 @@
+.viewBox{
+  margin-top: 5px;
+  padding: 10px;
+}
+.viewBox .jobsCount{
+  width: 80%;
+  margin: auto;
+}
+.viewBox .jobsCount h1{
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: 500;
+  padding: 20px;
+}
+.viewBox .search{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+}
+.viewBox .search .searchFields{
+  background-color: #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  width: 35%;
+  height: max-content;
+  position: sticky;
+  top:10px;
+}
+.viewBox .search .searchFields .inputContent{
+  display: flex;
+  flex-direction: column;
+}
+.viewBox .search .searchFields .inputContent label{
+  font-weight: 500;
+  margin-left: 5px;
+  color: rgb(20, 21, 20);
+}
+.viewBox .search .searchFields .inputContent input{
+  border: none;
+  height: 35px;
+  outline: none;
+  padding: 5px;
+}
+.inputContent .dropDown{
+  border: none;
+  height: 35px;
+  outline: none;
+  padding: 5px;
+}
+.viewBox .search .searchFields .btnFlex input[type='submit']{
+  border: none;
+  height: 35px;
+  outline: none;
+  padding: 5px;
+  background-color: #0064a9;
+  color:#fff;
+  font-size: 18px;
+  align-items: center;
+  text-align: center;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top:5px;
+  width: 150px;
+}
+.viewBox .search .searchFields .btnFlex input[type='submit']:hover{
+  background-color: #02436e;
+}
+.viewBox .search .searchContent{
+  width: 60%;
+}
+@media(max-width:600px) {
+  .viewBox .search,.viewBox .jobsCount {
+    width: 100%;
+  }
+}
+
+.flex{
+  display: flex;
+}
+.space-around{
+  justify-content: space-around;
+}
+.searchFields .btnFlex{
+  display: flex;
+  justify-content: space-around;
+}
+.text-small{
+  font-size:12px;
+}

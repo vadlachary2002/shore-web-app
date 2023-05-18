@@ -1,4 +1,23 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+npm run check-lint ||(
+  echo '
+
+                      ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️ ERROR ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
+  Failed to commit there are syntactical error please resolve it and commit again
+
+                      💡Try  `npm run lint-fix` to fix those errors
+  '
+  false;
+)
+
+echo '
+
+                    🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥   Whoooooo!!!😎  🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+Wow🤩🤩🤩 your code is perfect✨✨ in syntax and indentation you can push to your branch now
+
+
+                                    🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+'

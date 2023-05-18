@@ -1,0 +1,24 @@
+.popupMessage{
+  position: absolute;
+  right: 0px;
+  padding: 10px ;
+  min-width: 300px;
+  background: #ccceae;
+  transition: 1s ease-out;
+
+}
+.show-popup{
+  right:20px;
+}
+.hide-popup{
+  right:-400px;
+}
+.colorsuccess{
+  border-left: 7px solid green;
+}
+.colordanger{
+  border-left: 7px solid red;
+}
+.colorokay{
+  border-left: 7px solid blue;
+}

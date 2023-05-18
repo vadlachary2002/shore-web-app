@@ -1,8 +1,8 @@
 import {
-    createSlice,
-    // createSelector,
-    PayloadAction,
-    // createAsyncThunk
+  createSlice,
+  // createSelector,
+  PayloadAction,
+  // createAsyncThunk
 } from '@reduxjs/toolkit';
 
 // import { RootState, StoreDispatch, StoreGetState } from '../configureStore';
@@ -13,17 +13,17 @@ export type MapState = {
 };
 
 export const initialMapState: MapState = {
-    webmapId: '67372ff42cd145319639a99152b15bc3', // Topographic
+  webmapId: '67372ff42cd145319639a99152b15bc3', // Topographic
 };
 
 const slice = createSlice({
-    name: 'Map',
-    initialState: initialMapState,
-    reducers: {
-        webmapIdChanged: (state, action: PayloadAction<string>) => {
-            state.webmapId = action.payload;
-        },
+  name: 'Map',
+  initialState: initialMapState,
+  reducers: {
+    webmapIdChanged: (state, action: PayloadAction<string>) => {
+      state.webmapId = action.payload;
     },
+  },
 });
 
 const { reducer } = slice;

@@ -11,28 +11,28 @@ type AppContextProviderProps = {
 export const AppContext = createContext<AppContextValue>(null);
 
 const AppContextProvider: React.FC<AppContextProviderProps> = ({
-    children,
+  children,
 }: AppContextProviderProps) => {
-    const [value, setValue] = useState<AppContextValue>({
-        darkMode: false,
-    });
+  const [value, setValue] = useState<AppContextValue>({
+    darkMode: false,
+  });
 
-    const init = async () => {
-        // const contextValue: AppContextValue = {
-        //     darkMode: false
-        // };
-        // setValue(contextValue);
-    };
+  const init = async () => {
+    // const contextValue: AppContextValue = {
+    //     darkMode: false
+    // };
+    // setValue(contextValue);
+  };
 
-    React.useEffect(() => {
-        init();
-    }, []);
+  React.useEffect(() => {
+    init();
+  }, []);
 
-    return (
-        <AppContext.Provider value={value}>
-            {value ? children : null}
-        </AppContext.Provider>
-    );
+  return (
+    <AppContext.Provider value={value}>
+      {value ? children : null}
+    </AppContext.Provider>
+  );
 };
 
 export default AppContextProvider;

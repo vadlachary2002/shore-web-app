@@ -1,0 +1,230 @@
+.alignLeft {
+  text-align: left;
+}
+
+.b {
+  font-weight: bold;
+}
+
+.bordertop {
+  border-top: 2px solid var(--lightBlack);
+}
+
+.jobdetails {
+  position: sticky;
+  top:10px;
+  margin: auto;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
+  color: var(--blackHeadColor);
+  box-shadow: 0 0 5px rgba(72,72,72,.12), 0px 2px 2px rgba(72,72,72,.5);
+
+}
+
+.sticky {
+  max-width: 750px;
+  min-width: 300px;
+  margin: auto;
+  padding: 0 10px 0 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: none;
+  border-bottom: 1px solid var(--lightBlack);
+  display: flex;
+  flex-direction: column;
+}
+
+.jobTitle,
+.headDetails {
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.flexside {
+  display: flex;
+}
+
+.flexside .boxside {
+  padding: 10px;
+  align-items: left;
+}
+
+.jobTitle,
+.headDetails .title {
+  color: var(--blackHeadColor);
+}
+
+.jobTitle .title {
+  padding: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--blackHeadColor);
+}
+
+.wrong {
+  float: right;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px;
+  color: #000;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.jobTitle .title .wrong a {
+  color: var(--black);
+}
+
+.jobTitle a {
+  color: var(--blue);
+}
+
+.jobTitle .companyLocation,
+.jobTitle p {
+  color: var(--lightBlack);
+  font-size: 12 px;
+}
+
+.jobButton {
+  text-align: center;
+  margin: 10px;
+}
+
+.jobButton .btnApply {
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  background-color: var(--blue);
+}
+
+.jobButton .btnApply:hover {
+  background-color: blue;
+}
+
+.scrollableContent {
+  max-width: 750px;
+  min-width: 300px;
+  margin: auto;
+  padding: 10px;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.salaryDescription,
+.jobType {
+  font-size: 13px;
+  color: var(--blackHeadColor);
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.fullDetails {
+  text-align: left;
+}
+
+.fullDetails h1 {
+  margin: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--blackHeadColor);
+}
+
+.Box {
+  border-top: 2px solid var(--lightBlack);
+}
+
+.Box ul {
+  width: 100%;
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0 20px 0 40px;
+  margin-bottom: 10px;
+}
+
+.Box ul li {
+  font-weight: 400;
+  font-size: 14px;
+  width: 90%;
+  color: var(--blackHeadColor);
+  text-align: left;
+  margin: auto;
+}
+
+.Box .ul li {
+  list-style-type: disc;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Box .ul li span,
+.Box .ul li b {
+  padding: 5px;
+}
+
+.innerbox ul li {
+  color: #6e6b6a;
+}
+
+.report {
+  padding: 10px;
+}
+
+.report .btn {
+  background-color: #ccc;
+  padding: 8px 15px 8px 15px;
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+}
+
+.mainHead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sideContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.logoBox {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  max-width: 140px;
+  max-height: 140px;
+  justify-content: space-between;
+}
+
+.companyLogoImage {
+  background-position: center;
+  border-radius: 20px;
+}
+
+.jobTitle .closingDate{
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+}
+.jobTitle .closingDate .dateBold{
+  font-weight: bold;
+}

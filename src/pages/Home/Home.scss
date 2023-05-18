@@ -1,0 +1,198 @@
+:root{
+    --black:rgb(20, 20, 20);
+    --blackHeadColor:#3d3b3b;
+    --lightBlack:rgb(163, 154, 154);
+    --blue:#0064a9;
+    --yellow:#ffb12a;
+}
+body{
+  background-color: #eee;
+}
+.contentbox{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 2px;
+}
+.top{
+  text-align: center;
+  border-bottom: var(--lightBlack);
+}
+.down{
+  width:80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.left{
+  margin: auto;
+}
+
+.hide{
+  display: none;
+}
+
+@media only screen and (max-width: 1050px) {
+  .right{
+    display: none;
+  }
+  .down{
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .right{
+      display: block;
+  }
+  .down{
+    width: 80%;
+  }
+  .scrollableContent{
+    max-height: 500px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+}
+.inputForm {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+}
+.searchBar {
+  flex-basis: 40%;
+  padding: 2px;
+}
+
+.locationBar {
+  flex-basis: 40%;
+  padding: 2px;
+}
+.searchIcon{
+  flex-basis: 10%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  justify-content: space-around;
+  border-radius: 5px;
+  height:40px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(72,72,72,.12), 0px 2px 2px rgba(72,72,72,.5);
+}
+.searchIcon:hover{
+  background-color: #323030;
+}
+
+@media(max-width:600px) {
+  .inputForm {
+    flex-direction: column;
+  }
+}
+.endingMessage{
+  text-align: center;
+  color: #ffb12a;
+}
+.carousel-container {
+  max-width: 100%;
+  position: relative;
+  margin:10px;
+  padding-top:0;
+  align-items:center;
+  padding: 20px;
+}
+.carousel-container-default{
+  display:flex;
+  justify-content: center;
+}
+
+.carousel-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  position: relative;
+}
+.carousel-card  .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-container-5{
+  display: flex;
+  margin: auto;
+}
+.carousel-card h1{
+  padding: 5px 8px 5px 8px;
+  font-weight: 600;
+  color:#3d3b3b;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:15px;
+  min-width: 150px;
+  overflow-x: auto;
+  text-align: center;
+  border-radius: 5px;
+}
+.carousel-card img {
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.slideJobBtns{
+  text-align:center;
+}
+.slideBtns{
+  text-align:center;
+  display:flex;
+  justify-content: space-between;
+  position: relative;
+  top:-140px;
+}
+
+.prevButton,
+.nextButton {
+  border: none;
+  color: #0064a9;
+  font-size: 25px;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  opacity: 0.8;
+}
+
+.jobNextButton, .jobPrevButton {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: #0064a9;
+  font-size: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity .2s ease-in-out;
+}
+.jobNextButton{
+  right: 0;
+}
+.jobPrevButton{
+  left: 0;
+}
+
+
+
+
+

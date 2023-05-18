@@ -1,14 +1,8 @@
 module.exports = {
     "env": {
-        "browser": true,
         "es2021": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        'prettier'
-    ],
+    "extends": "plugin:react/recommended",
     "overrides": [
     ],
     "parser": "@typescript-eslint/parser",
@@ -18,11 +12,24 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
-        'prettier'
+        "@typescript-eslint"
     ],
     "rules": {
-        'prettier/prettier': 'error',
-        "@typescript-eslint/interface-name-prefix": "off"
-    }
+      "indent": [
+          "error",
+          2
+      ],
+      "linebreak-style": [
+          "error",
+          "unix"
+      ],
+      "quotes": [
+          "error",
+          "single"
+      ],
+      "semi": [
+          "error",
+          "always"
+      ]
+  }
 }

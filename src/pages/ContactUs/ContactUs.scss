@@ -1,0 +1,147 @@
+:root {
+  --blue:#0064a9;
+  --yellow:#ffb12a;
+  --background:rgb(5, 5, 84);
+}
+.contactContainer{
+  text-align: center;
+  box-sizing: border-box;
+  padding:10px;
+  display: flex;
+  max-width: 90%;
+  margin: auto;
+  background: var(--blue);
+  margin-top: 20px;
+  flex-wrap: wrap;
+  border-radius: 5px ;
+  padding: 30px 10px 30px 10px;
+  justify-content: space-around;
+}
+.contactContainer h1{
+  font-size:20px;
+  padding:10px;
+}
+.infobox{
+  padding:10px;
+  color:#888;
+  margin:auto;
+}
+.contentBox{
+  background-color:#fff;
+  border-radius: 5px;
+  max-width: 400px;
+}
+.contentBox form {
+  text-align: center;
+  justify-content: center;
+  margin:auto;
+  padding: 30px 5px 30px 5px;
+}
+.contentBox form input,.contentBox form textarea{
+  width:90%;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  margin:10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #afafaf;
+}
+.contentBox form input:hover,.contentBox form textarea:hover{
+  border: 1px solid var(--blue);
+}
+form .flexSide{
+  width: 90%;
+  margin:10px;
+  margin: auto;
+  padding: 5px;
+  display: flex;
+  align-items: left;
+}
+form .flexSide .submitStatus{
+  text-align: center;
+  align-items: center;
+  margin-top:10px;
+  padding: 8px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+form .flexSide .red{
+  color: red;
+}
+form .flexSide .green{
+  color:green;
+}
+.sendBtn{
+  color:white;
+  font-size: 15px;
+  background-color: var(--blue);
+  width: 150px;
+  padding: 8px;
+  border-radius: 5px;
+  margin-top:10px;
+  border: none;
+}
+.sendBtn:hover{
+  background-color: blue;
+}
+.sendingBtn{
+  color:#999;
+  font-size: 15px;
+  background-color: var(--blue);
+  width: 150px;
+  padding: 8px;
+  border-radius: 10px;
+  margin-top:10px;
+  border: none;
+}
+.leftContentBox{
+  color:white;
+  padding: 20px;
+  max-width: 400px;
+}
+.leftContentBox .heading{
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.leftContentBox .writeup{
+  font-size: 15px;
+  text-align: left;
+}
+.leftContentBox .body{
+  padding:10px;
+  margin-top: 20px;
+  max-width: 300px;
+  align-items: left;
+  text-align: left;
+}
+.leftContentBox .body .items{
+  padding: 10px;
+  color:  #eee;
+  margin: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.leftContentBox .body .items:hover{
+  color: var(--yellow);
+}
+.leftContentBox .body .items svg{
+  margin-right: 10px;
+}
+@media only screen and (max-width: 1050px) {
+  .writeup{
+    font-size: 12px;
+  }
+  .leftContentBox .body .items{
+    padding: 2px;
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 1050px) {
+  .writeup{
+    font-size: 18px;
+  }
+}

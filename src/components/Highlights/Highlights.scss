@@ -1,0 +1,40 @@
+.highlights{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.highlights .item{
+  background-color: #fff;
+  margin:5px;
+  padding: 2px 8px 2px 8px ;
+  display: flex;
+  border-radius: 3px;
+  align-items: center;
+  cursor: pointer;
+  transition: .2s ease;
+  box-shadow: 0 0 5px rgba(72,72,72,.12), 0px 2px 2px rgba(72,72,72,.5);
+}
+.highlights .item:hover{
+  background-color: #447ea4;
+  color: #fff;
+}
+.highlights .item .text{
+  margin-right: 5px;
+}
+.highlights .item .count{
+  width: 30px;
+  height: 28px;
+  border-left: 2px solid #447ea4;
+  border-right: 2px solid #447ea4;
+  color:#000;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  font-size:14px;
+  justify-content: center;
+  align-items: center;
+}
+.highlights .item:hover .count{
+  background-color: #fff;
+  color: #000;
+}

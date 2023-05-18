@@ -1,0 +1,43 @@
+.paymentStatus{
+  background-color: #afafaf;
+  margin:auto;
+  margin-top: 20px;
+  max-width: 500px;
+  padding:20px;
+  text-align: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.paymentStatus .icon{
+  font-size: 50px;
+  margin: auto;
+  color:white;
+  width:60px;
+  height:60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
+  border-radius: 50%;
+}
+.paymentStatus h1{
+  font-size: 20px;
+  color:#010101;
+  font-weight: 500;
+}
+.paymentStatus p{
+  color:#4e4b4b;
+}
+.paymentStatus .success{
+  background-color: green;
+}
+.paymentStatus .cancel{
+  background-color: rgb(250, 49, 49);
+  font-size: 40px;
+}
+
+@media only screen and (max-width: 1050px) {
+  .paymentStatus{
+    max-width:300px;
+  }
+}
