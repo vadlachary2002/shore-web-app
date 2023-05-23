@@ -80,7 +80,8 @@ export const fetchRecomendedJobs= async(page:Number)=>{
 };
 export const getSearchJobs = async (search:SearchData,page:Number) =>{
   try {
-    const response = await axios.get<Job[]>(`${REACT_BACKEND_URL}/v1/job?page=${page}`);
+    const searchContent = JSON.stringify(search);
+    const response = await axios.get<Job[]>(`${REACT_BACKEND_URL}/v1/job/search?page=${page}&search=${searchContent}`);
     return response;
   } catch ( error ) {
     return null;
@@ -92,5 +93,14 @@ export const getJobById = async (jobId:string) =>{
     return response;
   } catch ( error ) {
     return error.response;
+  }
+};
+
+export const getHighlights = async () => {
+  try{
+    const response = await axios.get(`${REACT_BACKEND_URL}/v1/job/highlights`);
+    return response.data;
+  }catch (error){
+    return [];
   }
 };

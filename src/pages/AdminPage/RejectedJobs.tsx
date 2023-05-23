@@ -40,7 +40,7 @@ const RejectedJobs = (props:Props) => {
         loader={<h4>Loading.....</h4>}
       >
         { jobs.map((element:Job)=>(
-          <JobFeed key={element._id} jobd={element} jobClick={()=>openJob(element)} />
+          <JobFeed key={element._id} jobd={element} jobClick={()=>openJob(element)} viewBtn={true} isAdmin={true} />
         )) }
       </InfiniteScroll>
       {!hasMoreJobs && <h4 className='endingMessage'>We have these jobs only...</h4>}

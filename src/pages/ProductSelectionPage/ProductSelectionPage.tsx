@@ -6,11 +6,14 @@ import { getProducts } from '../../services/Products';
 
 const ProductSelectionPage = () => {
   const [ products, setProducts] = useState([]);
+  const [ error, setError ] = useState('');
   const fetchProducts = async () => {
     const res = await getProducts();
-    if(res.status===200){
-      setProducts(res.data);
+    if(!res){
+      setError('error while fetching products');
+      return ;
     }
+    setProducts(res);
   }; 
   React.useEffect(()=>{
     fetchProducts();
@@ -24,6 +27,7 @@ const ProductSelectionPage = () => {
               <Product key={product.type} product={ product }  />
             ))
           }
+          {error && <span className='error'>{error}</span>}
         </div>
       </div>
     </ErrorBoundary>

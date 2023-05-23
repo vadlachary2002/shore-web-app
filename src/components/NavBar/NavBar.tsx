@@ -45,6 +45,7 @@ const NavBar = () => {
     else{
       return(
         <>
+          <li ><NavLink to="/postjobs">Post A Job</NavLink></li>
           <li ><NavLink to="/contactus">Contact Us</NavLink></li>
           <ul>
             <li><NavLink to="/signup">Signup</NavLink></li>

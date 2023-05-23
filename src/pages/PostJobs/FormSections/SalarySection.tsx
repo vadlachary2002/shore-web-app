@@ -25,6 +25,13 @@ const SalarySection =  (props: Props) => {
             required
             id="salary"
           />
+          <input
+            type="number"
+            name="salary"
+            onChange={(e)=>updateForm('salary.sal',e.target.value)}
+            required
+            id="salary"
+          />
         </div>
         <div className="row">
           <label htmlFor="hours">

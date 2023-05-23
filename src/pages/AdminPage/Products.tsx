@@ -7,15 +7,18 @@ import './Products.scss';
 const Products = () => {
 
   const [ products, setProducts] = useState([]);
+  const [ error, setError] = useState('');
   const [ loading, setLoading ] = useState(false);
   const updateLoading = (flag:boolean) => {
     setLoading(flag);
   };
   const fetchProducts = async () => {
     const res = await getProducts();
-    if(res.status===200){
-      setProducts(res.data);
+    if(!res){
+      setError('error while getting products');
+      return;
     }
+    setProducts(res);
   }; 
   React.useEffect(()=>{
     fetchProducts();
@@ -29,6 +32,7 @@ const Products = () => {
               <EditableProduct key={product.type} product={ product } loading={loading} updateLoading={updateLoading}  />
             ))
         }
+        {error && <span className="error">{error}</span>}
       </div>
     </div>
   );

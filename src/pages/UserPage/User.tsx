@@ -46,7 +46,7 @@ const User=()=>{
               loader={<h4>Loading......</h4>}
             >
               { jobs.map((element: Job)=>(
-                <JobFeed key={element._id} jobd={element} jobClick={jobClick} />
+                <JobFeed key={element._id} jobd={element} jobClick={jobClick} isUser={true} viewBtn={true} />
               )) }
             </InfiniteScroll>
           </div>

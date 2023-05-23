@@ -123,10 +123,17 @@ const Home = () => {
     setView(currentView);
     setCurrentJob(job);
   };
-  const gotoSearch = () => {
+  const gotoSearch = (title: string,location:string) => {
     history.push({
       pathname:'/search',
-      state: {jobTitle: jobTitle,locationValue: location}
+      state: {jobTitle: title,locationValue: location}
+    });
+    return ;
+  };
+  const gotoSearchByCompany = (value:string) =>{
+    history.push({
+      pathname:'/search',
+      state: {company:value}
     });
     return ;
   };
@@ -142,7 +149,7 @@ const Home = () => {
             <div className='locationBar'>
               <Location  update={updateLocation}  />
             </div>
-            <div className='searchIcon' onClick={gotoSearch}>
+            <div className='searchIcon' onClick={()=>gotoSearch(jobTitle, location)}>
               <span>Search </span>
               <FA icon={faSearch}></FA>
             </div>
@@ -154,7 +161,7 @@ const Home = () => {
           <div className="carousel-container">
             <Slider {...jobSlideSettings} ref={jobSliderRef}>
               {recomendedJobs.map((element:Job)=>(
-                <JobFeed key={element.job.title} jobd={element} jobClick={jobClick} />
+                <JobFeed key={element.job.title} jobd={element} jobClick={jobClick} isHome={true}  />
               ))}
 
             </Slider>
@@ -173,7 +180,9 @@ const Home = () => {
         <div className="carousel-container-default">
           {recomendedJobs.map((element)=>(
             <div className="carousel-card" key={element._id}>
-              <div className="card-content">
+              <div 
+                className="card-content" 
+                onClick={()=>gotoSearchByCompany(element.company.name)}>
                 <img src={element.company.logo} alt="Text" />
                 <h1>{element.company.name}</h1>
               </div>
@@ -186,7 +195,9 @@ const Home = () => {
           <Slider {...logoSlideSettings} ref={logoSliderRef}>
             {recomendedJobs.map((element)=>(
               <div className="carousel-card" key={element._id}>
-                <div className="card-content">
+                <div 
+                  className="card-content" 
+                  onClick={()=>gotoSearchByCompany(element.company.name)}>
                   <img src={element.company.logo} alt="Text" />
                   <h1>{element.company.name}</h1>
                 </div>
@@ -203,24 +214,6 @@ const Home = () => {
           </div>
         </div>
         }
-        <div className="down">
-          <div className={view==='hide'?'show':window.screen.width>900?'show':'hide'}>
-            <InfiniteScroll
-              dataLength={jobs.length}
-              hasMore={checkHasMore}
-              next={()=>setPage(jobs.length)}
-              loader={<h4>Loading...</h4>}
-            >
-              { job.map((element:Job)=>(
-                <JobFeed key={element._id} jobd={element} jobClick={jobClick} />
-              )) }
-            </InfiniteScroll>
-            {!checkHasMore && <h4 className='endingMessage'>We have these jobs only...</h4>}
-          </div>
-          <div className={view}>
-            {currentJob && <JobDetails key={currentJob._id} jobd={currentJob} jobClick={jobClick} disablePreview={null} isHome={true} />}
-          </div>
-        </div>
       </div>
     </ErrorBoundary>
   );

@@ -1,5 +1,7 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { ErrorBoundary } from '../../../components';
+import { getSectors } from '../../../services/Utils';
+
 
 interface Props{
   updateForm: (field: string, value: any) => void;
@@ -8,6 +10,15 @@ interface Props{
 const CompanyDetailsSection =  (props: Props) => {
 
   const { updateForm } = props;
+  const [ sectors, setSectors] = useState([]);
+
+  const fetchSectors = async ()=>{
+    const res = await getSectors();
+    setSectors(res);
+  };
+  React.useEffect(()=>{
+    fetchSectors();
+  },[]);
   const setLogo = (file: File) => {
     if(!file){
       updateForm('Logo',null);
@@ -46,12 +57,11 @@ const CompanyDetailsSection =  (props: Props) => {
             onChange={(e)=>updateForm('company.companyType',e.target.value)}
           >
             <option value="">select</option>
-            <option value="Academia">Academia</option>
-            <option value="Industry">Industry</option>
-            <option value="Government">Government</option>
-            <option value="Healthcare/Hospital">Healthcare/Hospital</option>
-            <option value="Non-Profit">Non-Profit</option>
-            <option value="Media/Communications">Media/Communications</option>
+            {
+              sectors.map((sector)=>(
+                <option value={sector} key={sector}>{sector}</option>
+              ))
+            }
           </select>
         </div>
         <div className="row">

@@ -34,6 +34,7 @@ export const DropDown = (props:Props) => {
   };
   const updateDropDown = (e:any)=>{
     const { id, checked } = e.target;
+    console.log('dd',dropDownValues);
     const newDropDownValues = dropDownValues.filter((dropDownValue)=> dropDownValue!=id);
     console.log('up',newDropDownValues);
     if(checked) newDropDownValues.push(id);
@@ -49,6 +50,7 @@ export const DropDown = (props:Props) => {
       <div className="pair">
         <FA className={rotation} icon={faPlay} onClick={openCloseFields} />
         <label className='box'> {dropDownName} </label>
+        {values.length===0 && <span>Loading...</span>}
       </div>
       <div className={rotation==='rotatedown'?'fields show':'fields hide'}>
         {

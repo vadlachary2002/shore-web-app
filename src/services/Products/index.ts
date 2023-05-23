@@ -8,9 +8,9 @@ const instance = axios.create({
 export const getProducts = async () => {
   try{
     const res = await axios.get<ProductData[]>(`${REACT_BACKEND_URL}/v1/products/get`);
-    return res;
+    return res.data;
   }catch( error ) {
-    error;
+    return null;
   }
 };
 export const updateProduct = async (product:ProductData) => {

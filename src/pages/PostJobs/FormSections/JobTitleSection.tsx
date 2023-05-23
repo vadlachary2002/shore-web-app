@@ -1,12 +1,14 @@
 import React,{useState} from 'react';
 import { ErrorBoundary } from '../../../components';
 import { Multiselect } from 'multiselect-react-dropdown';
+import { getDisciplines, getTitles } from '../../../services/Utils';
 interface Props{
   updateForm:(field:string,value:any)=>void;
 }
 const JobTitleSection = (props:Props) => {
   const { updateForm } = props;
-  const [option, setOption] = useState(['Life Sciences', 'Physics', 'Biomedicine','Health Sciences','Engineering','Chemistry','Computer Science','Applied Science','Nanotechnology','Earth Sciences','Environmental','Sciences','Veterinary','Fisheries','Agriculture','Forestry']);
+  const [options, setOptions] = useState([]);
+  const [titles, setTitles] = useState([]);
   const updateDiscipline=(field: string,value: any)=>{
     if(value.length==0){
       updateForm(field,null);
@@ -14,6 +16,18 @@ const JobTitleSection = (props:Props) => {
     }
     updateForm(field,value);
   };
+  const fetchDiscipline = async ()=>{
+    const res = await getDisciplines();
+    setOptions(res);
+  };
+  const fetchTitles = async ()=>{
+    const res = await getTitles();
+    setTitles(res);
+  };
+  React.useEffect(()=>{
+    fetchDiscipline();
+    fetchTitles();
+  },[]);
 
 
 
@@ -34,23 +48,11 @@ const JobTitleSection = (props:Props) => {
             onChange={(e)=>updateForm('job.title',e.target.value)}
           >
             <option value="">select</option>
-            <option value="Academic Dean/Dept. Head">Academic Dean/Dept. Head</option>
-            <option value="Faculty">Faculty</option>
-            <option value="Group Leader/Principal Invesigator">Group Leader/Principal Invesigator</option>
-            <option value="Lab Manager">Lab Manager</option>
-            <option value="Lecturer/Senior Lecturer">Lecturer/Senior Lecturer</option>
-            <option value="Manager">Manager</option>
-            <option value="Medical Doctor">Medical Doctor</option>
-            <option value="PhD Fellowship">PhD Fellowship</option>
-            <option value="PhD Studentship">PhD Studentship</option>
-            <option value="Postdoc Fellowship">Postdoc Fellowship</option>
-            <option value="President/CEO/Director/VP">President/CEO/Director/VP</option>
-            <option value="Project Manager">Project Manager</option>
-            <option value="Research Scientist">Research Scientist</option>
-            <option value="Senior Scientist">Senior Scientist</option>
-            <option value="Staff Scientist">Staff Scientist</option>
-            <option value="Student Fellowship">Student Fellowship</option>
-            <option value="Technician">Technician</option>
+            {
+              titles && titles.map((title)=>(
+                <option value={title} key={title}>{title}</option>
+              ))
+            }
           </select>
         </div>
         <div className="row">
@@ -88,8 +90,8 @@ const JobTitleSection = (props:Props) => {
             onSelect={(e)=>updateDiscipline('discipline',e)}
             onRemove={(e)=>updateDiscipline('discipline',e)}
             isObject={false}
-            options={option}
-            selectedValues={['Sciences']}
+            options={options}
+            selectedValues={[]}
           />
         </div>
         <div className="row">

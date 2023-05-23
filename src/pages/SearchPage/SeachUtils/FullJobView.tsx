@@ -28,7 +28,7 @@ export const FullJobView = () => {
     setJob(res.data);
   };
   const goBack = ()=>{
-    history.push('/search');
+    history.goBack();
     return ;
   };
   React.useEffect(()=>{

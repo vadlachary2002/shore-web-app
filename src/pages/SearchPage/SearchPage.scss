@@ -13,18 +13,13 @@
   padding: 20px;
 }
 .viewBox .search{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
   padding: 10px;
-  width: 80%;
   margin: auto;
 }
 .viewBox .search .searchFields{
   background-color: #ccc;
   border-radius: 4px;
   padding: 20px;
-  width: 35%;
   height: max-content;
   position: sticky;
   top:10px;
@@ -43,6 +38,9 @@
   height: 35px;
   outline: none;
   padding: 5px;
+}
+.viewBox .search .searchFields .inputContent input[type="range"]{
+  transform: rotate(180deg);
 }
 .inputContent .dropDown{
   border: none;
@@ -69,12 +67,42 @@
 .viewBox .search .searchFields .btnFlex input[type='submit']:hover{
   background-color: #02436e;
 }
-.viewBox .search .searchContent{
-  width: 60%;
+
+@media only screen and (min-width: 900px){
+  .viewBox .jobsCount {
+    width: 80%;
+  }
+  .viewBox .search{
+    width:80%;
+    display: flex;
+    justify-content: center;
+  }
+  .viewBox .search .searchFields{
+    width:35%;
+  }
+  .viewBox .search .searchContent{
+    width: 60%;
+  }
 }
-@media(max-width:600px) {
-  .viewBox .search,.viewBox .jobsCount {
+@media only screen and (max-width: 900px){
+  .viewBox .jobsCount {
     width: 100%;
+  }
+  .viewBox .search{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .viewBox .search .searchFields{
+    margin:auto;
+    width:90%;
+    position: inherit;
+  }
+  .viewBox .search .searchContent{
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
   }
 }
 

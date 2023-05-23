@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { ErrorBoundary } from '../../../components';
+import { getRegions } from '../../../services/Utils';
 
 interface Props{
   updateForm: (field: string, value: any) => void;
@@ -8,6 +9,15 @@ interface Props{
 const CompanyLocationSection =  (props: Props) => {
 
   const { updateForm } = props;
+  const [ regions, setRegions] = useState([]);
+
+  const fetchRegions = async ()=>{
+    const res = await getRegions();
+    setRegions(res);
+  };
+  React.useEffect(()=>{
+    fetchRegions();
+  },[]);
 
   return(
     <ErrorBoundary>
@@ -65,15 +75,11 @@ const CompanyLocationSection =  (props: Props) => {
             onChange={(e)=>updateForm('location.region',e.target.value)}
           >
             <option value="">select</option>
-            <option value="North America">North America</option>
-            <option value="Europe">Europe</option>
-            <option value="Asia">Asia</option>
-            <option value="South America">South America</option>
-            <option value="Asia Pacific">Asia Pacific</option>
-            <option value="Australia">Australia</option>
-            <option value="Working from home">Working from home</option>
-            <option value="Middle East">Middle East</option>
-            <option value="Oceania">Oceania</option>
+            {
+              regions.map((region)=>(
+                <option value={region} key={region}>{region}</option>
+              ))
+            }
           </select>
         </div>
       </div>
