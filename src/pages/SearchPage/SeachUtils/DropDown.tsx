@@ -34,9 +34,7 @@ export const DropDown = (props:Props) => {
   };
   const updateDropDown = (e:any)=>{
     const { id, checked } = e.target;
-    console.log('dd',dropDownValues);
     const newDropDownValues = dropDownValues.filter((dropDownValue)=> dropDownValue!=id);
-    console.log('up',newDropDownValues);
     if(checked) newDropDownValues.push(id);
     setDropDownValues((updatedDropDownValues)=>{
       updateArray(name,newDropDownValues);

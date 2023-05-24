@@ -1,6 +1,6 @@
 import React,{useState, createContext , useReducer} from 'react';
 import { useCookies } from 'react-cookie';
-import { ErrorBoundary,NavBar, PaymentSuccess, PaymentCancel } from '../../components';
+import { ErrorBoundary,NavBar, PaymentSuccess, PaymentCancel, Footer } from '../../components';
 import {HashRouter as Router,Switch,Route,Link} from 'react-router-dom';
 import {User,Home,PostJobs,Form,ContactUs,ProductSelectionPage,BillingPage,Login,Logout,Signup,Profile,Admin,SearchPage} from '../../pages';
 import { FullJobView } from '../SearchPage/SeachUtils/FullJobView';
@@ -39,6 +39,7 @@ const HomePage = () => {
               <Route path='/search' ><SearchPage /></Route>
               <Route path='/job/:jobId' ><FullJobView /></Route>
             </Switch>
+            <Footer />
           </ErrorBoundary>
         </UserContext.Provider>
       </div>

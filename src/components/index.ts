@@ -10,3 +10,4 @@ export { default as PaymentSuccess } from './Product/PaymentSuccess';
 export { default as PaymentCancel } from './Product/PaymentCancel';
 export { default as Message } from './MessageBox/Message';
 export { default as Highlights } from './Highlights/Highlights';
+export { default as Footer } from './Footer/Footer';

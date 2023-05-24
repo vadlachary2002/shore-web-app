@@ -98,7 +98,6 @@ const SearchPage = () => {
     if(typeof(value)==='string'){
       value= value.trim();
     }
-    console.log(search.discipline);
     setSearch((prevSearch)=>{
       const updatedSearch = {
         ...search,
@@ -114,7 +113,6 @@ const SearchPage = () => {
   const onSubmit = async (e: any)=>{
     e.preventDefault();
     const searchJobs = await getSearchJobs(search,page);
-    console.log(searchJobs);
     if(!searchJobs || searchJobs.data.length===0){
       setCheckHasMore(false);
       setJobs([]);

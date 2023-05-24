@@ -1,0 +1,121 @@
+.color-yellow{
+  color:var(--yellow);
+}
+.font-heading{
+  font-size: 20px;
+  font-weight: 500;
+}
+.footer{
+  margin-top: 100px;
+  background-color: #0064a9;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  padding: 10px;
+  color: #020d50;
+  font-weight: 400;
+}
+.foot-top{
+  width:100%;
+  padding: 10px;
+}
+.footer .foot-top .width80{
+  width: 80%;
+  border-bottom: blue;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.footer .foot-top .width80 svg{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin:5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.footer .foot-top .width80 svg:hover{
+  color: var(--yellow);
+}
+.footer .foot-middle{
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+}
+.footer .foot-middle .company-text{
+  max-width: 400px;
+  padding: 10px;
+}
+.footer .foot-middle .company-text p{
+  margin-top: 10px;
+}
+.footer .foot-middle .company-text .flex{
+  display: flex;
+  justify-content: center;
+}
+.footer .foot-middle .company-text .flex .img{
+  padding: 3px;
+  width: 50px;
+  height: 35px;
+  background-color: #eee;
+}
+
+.footer .foot-middle .links{
+  padding: 10px;
+}
+.footer .foot-middle .links ul{
+  margin-top: 10px;
+  list-style: none;
+  text-align: left;
+}
+.footer .foot-middle .links ul li{
+  padding: 6px;
+  margin: 5px;
+  cursor: pointer;
+}
+.footer .foot-middle .links  ul li a svg{
+  margin-right: 10px;
+}
+.footer .foot-middle .links ul li:hover{
+  color: var(--yellow)
+}
+.footer .foot-middle .contact-details{
+  min-width: 250px;
+}
+.footer .foot-middle .contact-details .box{
+  padding: 10px;
+  cursor: pointer;
+}
+.footer .foot-middle .contact-details .box svg{
+  margin-right: 10px;
+
+}
+.footer .foot-middle .contact-details .box:hover{
+  color:var(--yellow);
+}
+.footer .foot-bottom{
+  text-align: center;
+  padding: 20px;
+  color: #020202;
+  font-weight: 500;
+}
+
+@media only screen and (max-width:900px){
+  .footer .foot-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer .foot-middle .links{
+    text-align: center;
+  }
+  .footer .foot-middle .links ul{
+    background-color:red;
+    text-align: center;
+  }
+}
